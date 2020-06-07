@@ -32,6 +32,11 @@ class MyHomePage extends StatelessWidget {
       ),
     ];
 
+    //String titleInput;
+    //String amountInput;
+    final titleController = TextEditingController();
+    final amountController = TextEditingController();
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Flutter App'),
@@ -56,14 +61,14 @@ class MyHomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
                   TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Title',
-                    ),
+                    decoration: InputDecoration(labelText: 'Title'),
+                    controller: titleController,
+                    //onChanged: (value) => titleInput = value,
                   ),
                   TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Amount',
-                    ),
+                    decoration: InputDecoration(labelText: 'Amount'),
+                    controller: amountController,
+                    //onChanged: (value) => amountInput = value,
                   ),
                   FlatButton(
                     child: Text('Add transaction'),
