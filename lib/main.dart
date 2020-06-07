@@ -20,13 +20,13 @@ class MyHomePage extends StatelessWidget {
       Transaction(
         id: "id_1",
         title: "New Shoes",
-        amount: 12.0,
+        amount: 11.99,
         date: DateTime.now(),
       ),
       Transaction(
         id: "id_2",
         title: "Weekly Groceries",
-        amount: 10.0,
+        amount: 10.55,
         date: DateTime.now(),
       ),
     ];
@@ -53,14 +53,42 @@ class MyHomePage extends StatelessWidget {
                         child: Row(
                       children: <Widget>[
                         Container(
+                          margin: EdgeInsets.symmetric(
+                            vertical: 10.0,
+                            horizontal: 15.0,
+                          ),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.purple,
+                              width: 2.0,
+                            ),
+                          ),
+                          padding: EdgeInsets.all(10.0),
                           child: Text(
                             transation.amount.toString(),
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20.0,
+                              color: Colors.purple,
+                            ),
                           ),
                         ),
                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text(transation.title),
-                            Text(transation.date.toString()),
+                            Text(
+                              transation.title,
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              transation.date.toString(),
+                              style: TextStyle(
+                                color: Colors.grey,
+                              ),
+                            ),
                           ],
                         )
                       ],
