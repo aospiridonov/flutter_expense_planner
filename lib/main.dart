@@ -16,13 +16,18 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.cyan,
         fontFamily: 'Quicksand',
         textTheme: ThemeData.light().textTheme.copyWith(
-                title: TextStyle(
+            // ignore: deprecated_member_use
+            title: TextStyle(
               fontFamily: 'OpenSanS',
               fontWeight: FontWeight.bold,
               fontSize: 18.0,
+            ),
+            button: TextStyle(
+              color: Colors.white,
             )),
         appBarTheme: AppBarTheme(
           textTheme: ThemeData.light().textTheme.copyWith(
+                  // ignore: deprecated_member_use
                   title: TextStyle(
                 fontFamily: 'OpenSanS',
                 fontWeight: FontWeight.bold,
