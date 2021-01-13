@@ -8,8 +8,6 @@ class AdaptiveFlatButton extends StatelessWidget {
   final Function handler;
   AdaptiveFlatButton(this.text, this.handler);
 
-  //const AdaptiveFlatButton({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Platform.isIOS
