@@ -10,16 +10,17 @@ class TransactionList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('build() TransactionList');
     return transations.isEmpty
         ? LayoutBuilder(builder: (context, constraints) {
             return Column(
               children: <Widget>[
                 Text(
-                  'No transaction added yet!',
+                  'No transactions added yet!',
                   // ignore: deprecated_member_use
                   style: Theme.of(context).textTheme.title,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20.0,
                 ),
                 Container(
@@ -44,7 +45,7 @@ class TransactionList extends StatelessWidget {
                   leading: CircleAvatar(
                     radius: 30.0,
                     child: Padding(
-                      padding: EdgeInsets.all(6.0),
+                      padding: const EdgeInsets.all(6.0),
                       child: FittedBox(
                         child: Text('\$ ${transations[index].amount}'),
                       ),
@@ -61,12 +62,12 @@ class TransactionList extends StatelessWidget {
                       ? FlatButton.icon(
                           onPressed: () =>
                               deleteTransaction(transations[index].id),
-                          icon: Icon(Icons.delete),
-                          label: Text("Delete"),
+                          icon: const Icon(Icons.delete),
+                          label: const Text("Delete"),
                           textColor: Theme.of(context).errorColor,
                         )
                       : IconButton(
-                          icon: Icon(Icons.delete),
+                          icon: const Icon(Icons.delete),
                           color: Theme.of(context).errorColor,
                           onPressed: () =>
                               deleteTransaction(transations[index].id),
