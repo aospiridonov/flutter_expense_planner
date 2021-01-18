@@ -3,14 +3,14 @@ import '../models/transaction.dart';
 import './transaction_item.dart';
 
 class TransactionList extends StatelessWidget {
-  final List<Transaction> transations;
+  final List<Transaction> transactions;
   final Function deleteTransaction;
-  TransactionList(this.transations, this.deleteTransaction);
+  TransactionList(this.transactions, this.deleteTransaction);
 
   @override
   Widget build(BuildContext context) {
     print('build() TransactionList');
-    return transations.isEmpty
+    return transactions.isEmpty
         ? LayoutBuilder(builder: (context, constraints) {
             return Column(
               children: <Widget>[
@@ -32,14 +32,14 @@ class TransactionList extends StatelessWidget {
               ],
             );
           })
-        : ListView.builder(
-            itemBuilder: (context, index) {
-              return TransactionItem(
-                transation: transations[index],
-                deleteTransaction: deleteTransaction,
-              );
-            },
-            itemCount: transations.length,
+        : ListView(
+            children: transactions
+                .map((transaction) => TransactionItem(
+                      key: ValueKey(transaction.id),
+                      transaction: transaction,
+                      deleteTransaction: deleteTransaction,
+                    ))
+                .toList(),
           );
   }
 }
