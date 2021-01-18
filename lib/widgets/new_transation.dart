@@ -8,16 +8,43 @@ import 'package:intl/intl.dart';
 class NewTransation extends StatefulWidget {
   final Function addTransaction;
 
-  NewTransation(this.addTransaction);
+  NewTransation(this.addTransaction) {
+    print('Constructor NewTransation Widget');
+  }
 
   @override
-  _NewTransationState createState() => _NewTransationState();
+  _NewTransationState createState() {
+    print('createState NewTransation Widget');
+    return _NewTransationState();
+  }
 }
 
 class _NewTransationState extends State<NewTransation> {
   final _titleController = TextEditingController();
   final _amountController = TextEditingController();
   DateTime _selectedDate;
+
+  _NewTransationState() {
+    print('Constructor NewTransation State');
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    print('initState()');
+  }
+
+  @override
+  void didUpdateWidget(covariant NewTransation oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    print('didUpdateWidget()');
+  }
+
+  @override
+  void dispose() {
+    print('dispose()');
+    super.dispose();
+  }
 
   void _submitData() {
     if (_amountController.text.isEmpty) {
